@@ -12,7 +12,7 @@ import java.util.UUID;
 public class BeerController {
 
     @GetMapping("/{beerId}")
-    public ResponseEntity<BeerDto> getBeerById(@RequestParam("beerId") UUID beerId) {
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId) {
         //to do impl
         return new ResponseEntity<>(BeerDto.builder().build(), HttpStatus.OK);
     }
@@ -24,14 +24,9 @@ public class BeerController {
     }
 
     @PutMapping("/{beerId}")
-    public ResponseEntity updateBeerById(@RequestParam("beerId") UUID beerId, @RequestBody BeerDto beerDto) {
+    public ResponseEntity updateBeerById(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto) {
         //to do impl
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping("/{beerId}")
-    public ResponseEntity deleteBeerById(@RequestParam("beerId")UUID beerId){
-        //to do impl
-        return new ResponseEntity(HttpStatus.OK);
-    }
 }
